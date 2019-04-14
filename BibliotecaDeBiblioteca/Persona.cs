@@ -8,16 +8,16 @@ namespace BibliotecaDeBiblioteca
 {
     public class Persona
     {
-        public string nro_documento { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string email { get; set; }
-        public int telefono { get; set; }
-        public string direccion { get; set; }
+        public string Nro_documento { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Email { get; set; }
+        public int Telefono { get; set; }
+        public string Direccion { get; set; }
 
         public override string ToString()
         {
-            return String.Format("Nombre: {0} Apellido: {1} Nro Doc: {2}", this.nombre, this.apellido, this.nro_documento);
+            return String.Format("Nombre: {0} Apellido: {1} Nro Doc: {2}", this.Nombre, this.Apellido, this.Nro_documento);
         }
 
     }

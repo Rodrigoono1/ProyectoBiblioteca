@@ -8,14 +8,13 @@ namespace BibliotecaDeBiblioteca
 {
     public class Autor : Persona
     {
+        public int Codigo { get; set; }
         public Autor() { }
-        public Autor(string nro_documento, string nombre, string apellido, int telefono, string direccion)
+        public Autor(int codigo, string nombre, string apellido)
         {
-            this.nro_documento = nro_documento;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.telefono = telefono;
-            this.direccion = direccion;
+            this.Codigo = codigo;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
         }
     }
 }

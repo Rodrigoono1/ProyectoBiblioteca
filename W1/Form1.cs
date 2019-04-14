@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaDeBiblioteca;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace W1
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Usuarios usuario = new Usuarios() { Nro_documento = "1234567", Nombre = "Jose", Apellido = "Gonzalez", Email = "jgonzalez@intro.com.py", Direccion = "su casa", Contrasenha="prueba123", Cargo="recepcionista" };
+            Socios socio = new Socios() { Nro_documento = "1234568", Nombre = "Alfredo", Apellido = "Rodriguez", Email = "alfredor@micorreo.com", Direccion = "al lado de Jose" };
+            Prestamos prestamo = new Prestamos(Convert.ToDateTime("15/04/2019"));
+            Libros libro = new Libros() { titulo="El Padrino"};
+            txtLabel.Text=prestamo.MostrarPrestamo(socio,usuario,libro);
         }
     }
 }

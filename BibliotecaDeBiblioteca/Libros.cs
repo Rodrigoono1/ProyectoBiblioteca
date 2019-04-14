@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeBiblioteca
 {
-    class Libros
+    public class Libros
     {
         public string titulo { get; set; }
         public string ISBN { get; set; }
         public int Año { get; set; }
 
-        public Libros(string ISBN, string titulo)
+        public Libros() { }
+        public Libros(string titulo, string isbn, int año )
         {
             this.titulo = titulo;
-            this.ISBN = ISBN;
-            this.Año = Año;
+            this.ISBN = isbn;
+            this.Año = año;
+        }
+        public override string ToString()
+        {
+            return String.Format("Titulo: {0} Año: {1} ISBN: {2}", this.titulo, this.Año, this.ISBN);
         }
     }
 }

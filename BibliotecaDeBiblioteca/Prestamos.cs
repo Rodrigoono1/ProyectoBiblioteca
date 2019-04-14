@@ -6,14 +6,28 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeBiblioteca
 {
-    class Prestamos
+    public class Prestamos
     {
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+        public Usuarios usuario{get; set;}
+        public Socios socio { get; set; }
+        public Libros libro { get; set; }
         public Prestamos(DateTime FechaInicio, DateTime FechaFin)
         {
             this.FechaInicio = FechaInicio;
             this.FechaFin = FechaFin;
+        }
+        public Prestamos(DateTime inicio) {
+            this.FechaInicio = inicio;
+        }
+        public string MostrarPrestamo(Socios cliente, Usuarios encargado, Libros objeto)
+        {
+            this.socio = cliente;
+            this.usuario= encargado;
+            this.libro = objeto;
+
+            return String.Format("{0} prestado a {1} {2} por {3} {4} en fecha {5}", this.libro.titulo, this.socio.Nombre, this.socio.Apellido, this.usuario.Nombre, this.usuario.Apellido, this.FechaInicio);
         }
     }
 }
