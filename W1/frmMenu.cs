@@ -17,6 +17,28 @@ namespace W1
             InitializeComponent();
         }
 
-        
+        private void TsmSocio_Click(object sender, EventArgs e)
+        {
+            frmSocio form = new frmSocio();
+            form.Show();
+        }
+
+        private void TsmAutor_Click(object sender, EventArgs e)
+        {
+            frmAutor form = new frmAutor();
+            form.Show();
+        }
+
+        private void TsmEditorial_Click(object sender, EventArgs e)
+        {
+            frmEditorial form = new frmEditorial();
+            form.Show();
+        }
+
+        private void TsmLibro_Click(object sender, EventArgs e)
+        {
+            frmLibro form = new frmLibro();
+            form.Show();
+        }
     }
 }

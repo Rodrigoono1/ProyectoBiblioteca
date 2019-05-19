@@ -8,17 +8,24 @@ namespace BibliotecaDeBiblioteca
 {
     public class Socios : Persona
     {
+
+      
         public string categoria { get; set; }
 
 
         public Socios() { }
-        public Socios(string nro_documento, string nombre, string apellido, int telefono, string direccion)
+        public Socios(string nro_documento, string nombre, string apellido, string email, string telefono, string direccion)
         {
             this.Nro_documento = nro_documento;
             this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Email = email;
             this.Telefono = telefono;
             this.Direccion = direccion;
 
         }
+        
+        public List<Socios> listarsocios = new List<Socios>();
+
     }
 }
