@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace W1
 {
-    public partial class Form1 : Form
+    public partial class frmLibro : Form
     {
-        public Form1()
+        public frmLibro()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace W1
             Socios socio = new Socios() { Nro_documento = "1234568", Nombre = "Alfredo", Apellido = "Rodriguez", Email = "alfredor@micorreo.com", Direccion = "al lado de Jose" };
             Prestamos prestamo = new Prestamos(Convert.ToDateTime("15/04/2019"));
             Libros libro = new Libros() { titulo="El Padrino"};
-            txtLabel.Text=prestamo.MostrarPrestamo(socio,usuario,libro);
+            lblTitulo.Text=prestamo.MostrarPrestamo(socio,usuario,libro);
         }
     }
 }

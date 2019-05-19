@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autor.cs" />
+    <Compile Include="Devoluciones.cs" />
     <Compile Include="Editorial.cs" />
     <Compile Include="Libros.cs" />
     <Compile Include="Persona.cs" />

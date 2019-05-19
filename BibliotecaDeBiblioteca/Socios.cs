@@ -16,7 +16,6 @@ namespace BibliotecaDeBiblioteca
         {
             this.Nro_documento = nro_documento;
             this.Nombre = nombre;
-            this.Apellido = apellido;
             this.Telefono = telefono;
             this.Direccion = direccion;
 

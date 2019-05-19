@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeBiblioteca
 {
-    class Editorial
+    public class Editorial
     {
-        public string Nombre { get; set; }
-        public string Direccion { get; set; }
-        public string Telefono { get; set; }
+        public string nombre { get; set; }
+        public string direccion { get; set; }
+        public string telefono { get; set; }
         public int idEditorial { get; set; }
-
+        public string email { get; set; }
 
         public Editorial() { }
         public Editorial(string nro_documento, string nombre, string apellido, string telefono, string direccion)
         {
-            this.Nombre = nombre;
-            this.Direccion = direccion;
+            this.nombre = nombre;
+            this.direccion = direccion;
             this.idEditorial = idEditorial;
-            this.Telefono = telefono;
+            this.telefono = telefono;
         }
     }
 }
