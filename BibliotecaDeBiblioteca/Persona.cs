@@ -14,6 +14,7 @@ namespace BibliotecaDeBiblioteca
         public string Email { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+        public string Nacionalidad { get; set; }
 
         public override string ToString()
         {
