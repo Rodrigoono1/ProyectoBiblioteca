@@ -40,5 +40,11 @@ namespace W1
             frmLibro form = new frmLibro();
             form.Show();
         }
+
+        private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario form = new frmUsuario();
+            form.Show();
+        }
     }
 }
