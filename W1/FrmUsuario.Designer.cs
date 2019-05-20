@@ -51,115 +51,130 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(61, 75);
+            this.lblNombre.Location = new System.Drawing.Point(81, 92);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(61, 120);
+            this.lblApellido.Location = new System.Drawing.Point(81, 148);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.Size = new System.Drawing.Size(58, 17);
             this.lblApellido.TabIndex = 1;
             this.lblApellido.Text = "Apellido";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(61, 164);
+            this.lblTelefono.Location = new System.Drawing.Point(81, 202);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(64, 17);
             this.lblTelefono.TabIndex = 2;
             this.lblTelefono.Text = "Telefono";
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(61, 207);
+            this.lblDireccion.Location = new System.Drawing.Point(81, 255);
+            this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.Size = new System.Drawing.Size(67, 17);
             this.lblDireccion.TabIndex = 3;
             this.lblDireccion.Text = "Direccion";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(61, 250);
+            this.lblUsuario.Location = new System.Drawing.Point(81, 308);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(57, 17);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = "Usuario";
             // 
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(61, 286);
+            this.lblContrasena.Location = new System.Drawing.Point(81, 352);
+            this.lblContrasena.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(61, 13);
+            this.lblContrasena.Size = new System.Drawing.Size(81, 17);
             this.lblContrasena.TabIndex = 5;
             this.lblContrasena.Text = "Contraseña";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(125, 72);
+            this.txtNombre.Location = new System.Drawing.Point(167, 89);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(194, 20);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.Size = new System.Drawing.Size(257, 22);
+            this.txtNombre.TabIndex = 1;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(125, 120);
+            this.txtApellido.Location = new System.Drawing.Point(167, 148);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(194, 20);
-            this.txtApellido.TabIndex = 7;
+            this.txtApellido.Size = new System.Drawing.Size(257, 22);
+            this.txtApellido.TabIndex = 2;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(125, 164);
+            this.txtTelefono.Location = new System.Drawing.Point(167, 202);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(194, 20);
-            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.Size = new System.Drawing.Size(257, 22);
+            this.txtTelefono.TabIndex = 3;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(125, 200);
+            this.txtDireccion.Location = new System.Drawing.Point(167, 246);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(242, 20);
-            this.txtDireccion.TabIndex = 9;
+            this.txtDireccion.Size = new System.Drawing.Size(257, 22);
+            this.txtDireccion.TabIndex = 4;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(125, 243);
+            this.txtUsuario.Location = new System.Drawing.Point(167, 299);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuario.TabIndex = 10;
+            this.txtUsuario.Size = new System.Drawing.Size(257, 22);
+            this.txtUsuario.TabIndex = 5;
             // 
             // txtcontrasena
             // 
-            this.txtcontrasena.Location = new System.Drawing.Point(125, 283);
+            this.txtcontrasena.Location = new System.Drawing.Point(167, 348);
+            this.txtcontrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtcontrasena.Name = "txtcontrasena";
             this.txtcontrasena.PasswordChar = '*';
-            this.txtcontrasena.Size = new System.Drawing.Size(194, 20);
-            this.txtcontrasena.TabIndex = 11;
+            this.txtcontrasena.Size = new System.Drawing.Size(257, 22);
+            this.txtcontrasena.TabIndex = 6;
             // 
             // lstUsuarios
             // 
             this.lstUsuarios.FormattingEnabled = true;
-            this.lstUsuarios.Location = new System.Drawing.Point(469, 38);
+            this.lstUsuarios.ItemHeight = 16;
+            this.lstUsuarios.Location = new System.Drawing.Point(625, 47);
+            this.lstUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstUsuarios.Name = "lstUsuarios";
-            this.lstUsuarios.Size = new System.Drawing.Size(226, 394);
-            this.lstUsuarios.TabIndex = 12;
+            this.lstUsuarios.Size = new System.Drawing.Size(300, 484);
+            this.lstUsuarios.TabIndex = 8;
             this.lstUsuarios.Click += new System.EventHandler(this.LstUsuarios_Click);
             // 
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(61, 334);
+            this.lblCargo.Location = new System.Drawing.Point(81, 411);
+            this.lblCargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(35, 13);
+            this.lblCargo.Size = new System.Drawing.Size(46, 17);
             this.lblCargo.TabIndex = 13;
             this.lblCargo.Text = "Cargo";
             // 
@@ -167,46 +182,50 @@
             // 
             this.cboCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCargo.FormattingEnabled = true;
-            this.cboCargo.Location = new System.Drawing.Point(125, 334);
+            this.cboCargo.Location = new System.Drawing.Point(167, 411);
+            this.cboCargo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCargo.Name = "cboCargo";
-            this.cboCargo.Size = new System.Drawing.Size(194, 21);
-            this.cboCargo.TabIndex = 14;
+            this.cboCargo.Size = new System.Drawing.Size(257, 24);
+            this.cboCargo.TabIndex = 7;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(64, 409);
+            this.btnAgregar.Location = new System.Drawing.Point(85, 503);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 15;
+            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
+            this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(168, 409);
+            this.btnModificar.Location = new System.Drawing.Point(224, 503);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 16;
+            this.btnModificar.Size = new System.Drawing.Size(100, 28);
+            this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(265, 409);
+            this.btnLimpiar.Location = new System.Drawing.Point(353, 503);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpiar.TabIndex = 17;
+            this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
+            this.btnLimpiar.TabIndex = 11;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // frmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 533);
+            this.ClientSize = new System.Drawing.Size(999, 656);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -225,6 +244,7 @@
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUsuario";
             this.Text = "FrmUsuario";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
