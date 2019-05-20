@@ -20,11 +20,7 @@ namespace W1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios() { Nro_documento = "1234567", Nombre = "Jose", Apellido = "Gonzalez", Email = "jgonzalez@intro.com.py", Direccion = "su casa",Usuario= "jgonzalez", Contrasenha="prueba123", CargoUsuario=Cargo.Usuario };
-            Socios socio = new Socios() { Nro_documento = "1234568", Nombre = "Alfredo", Apellido = "Rodriguez", Email = "alfredor@micorreo.com", Direccion = "al lado de Jose" };
-            Prestamos prestamo = new Prestamos(Convert.ToDateTime("15/04/2019"));
-            Libros libro = new Libros() { titulo="El Padrino"};
-            lblTitulo.Text=prestamo.MostrarPrestamo(socio,usuario,libro);
+            
         }
     }
 }
