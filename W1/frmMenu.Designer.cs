@@ -67,28 +67,28 @@
             // tsmAutor
             // 
             this.tsmAutor.Name = "tsmAutor";
-            this.tsmAutor.Size = new System.Drawing.Size(216, 26);
+            this.tsmAutor.Size = new System.Drawing.Size(140, 26);
             this.tsmAutor.Text = "Autor";
             this.tsmAutor.Click += new System.EventHandler(this.TsmAutor_Click);
             // 
             // tsmEditorial
             // 
             this.tsmEditorial.Name = "tsmEditorial";
-            this.tsmEditorial.Size = new System.Drawing.Size(216, 26);
+            this.tsmEditorial.Size = new System.Drawing.Size(140, 26);
             this.tsmEditorial.Text = "Editorial";
             this.tsmEditorial.Click += new System.EventHandler(this.TsmEditorial_Click);
             // 
             // tsmLibro
             // 
             this.tsmLibro.Name = "tsmLibro";
-            this.tsmLibro.Size = new System.Drawing.Size(216, 26);
+            this.tsmLibro.Size = new System.Drawing.Size(140, 26);
             this.tsmLibro.Text = "Libro";
             this.tsmLibro.Click += new System.EventHandler(this.TsmLibro_Click);
             // 
             // tsmSocio
             // 
             this.tsmSocio.Name = "tsmSocio";
-            this.tsmSocio.Size = new System.Drawing.Size(216, 26);
+            this.tsmSocio.Size = new System.Drawing.Size(140, 26);
             this.tsmSocio.Text = "Socio";
             this.tsmSocio.Click += new System.EventHandler(this.TsmSocio_Click);
             // 
@@ -104,13 +104,13 @@
             // tsmPrestamo
             // 
             this.tsmPrestamo.Name = "tsmPrestamo";
-            this.tsmPrestamo.Size = new System.Drawing.Size(159, 26);
+            this.tsmPrestamo.Size = new System.Drawing.Size(216, 26);
             this.tsmPrestamo.Text = "Préstamo";
             // 
             // tsmDevolucion
             // 
             this.tsmDevolucion.Name = "tsmDevolucion";
-            this.tsmDevolucion.Size = new System.Drawing.Size(159, 26);
+            this.tsmDevolucion.Size = new System.Drawing.Size(216, 26);
             this.tsmDevolucion.Text = "Devolución";
             // 
             // frmMenu
@@ -122,6 +122,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMenu";
             this.Text = "Menú";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

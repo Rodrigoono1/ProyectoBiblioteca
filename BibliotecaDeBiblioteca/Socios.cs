@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeBiblioteca
 {
+    public enum Categoria
+    {
+        Free,
+        Basico,
+        Premium
+    }
+
     public class Socios : Persona
     {
 
-      
-        public string categoria { get; set; }
-
-
+             
+        //public Categoria Categoria { get; set; }
+        public string Categoria { get; set; }
         public Socios() { }
-        public Socios(string nro_documento, string nombre, string apellido, string email, string telefono, string direccion)
+        public Socios(string nro_documento, string nombre, string apellido, string email, string telefono, string direccion,string categoria)
         {
             this.Nro_documento = nro_documento;
             this.Nombre = nombre;
@@ -22,9 +28,10 @@ namespace BibliotecaDeBiblioteca
             this.Email = email;
             this.Telefono = telefono;
             this.Direccion = direccion;
-
+            this.Categoria = categoria;
         }
         
+
         public List<Socios> listarsocios = new List<Socios>();
 
     }

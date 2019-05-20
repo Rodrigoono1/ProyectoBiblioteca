@@ -22,8 +22,10 @@ namespace W1
 
         private void FrmSocio_Load(object sender, EventArgs e)
         {
+            cmbCategoria.DataSource = Enum.GetValues(typeof(Categoria));
             socio = new Socios();
             dgvSocio.AutoGenerateColumns = true;
+            cmbCategoria.SelectedItem = null;
 
 
         }
@@ -41,11 +43,15 @@ namespace W1
             txtDireccion.Text = "";
             txtNroDoc.Text = "";
             txtTelefono.Text = "";
+            txtEmail.Text = "";
+            cmbCategoria.SelectedItem = null;
 
         }
 
         private void BtnAgregar_Click_1(object sender, EventArgs e)
         {
+            string cm = cmbCategoria.Text.ToString();
+
             Socios soc = new Socios();
             soc.Nro_documento = txtNroDoc.Text;
             soc.Nombre = txtNombre.Text;
@@ -53,15 +59,31 @@ namespace W1
             soc.Email = txtEmail.Text;
             soc.Telefono = txtTelefono.Text;
             soc.Direccion = txtDireccion.Text;
+            soc.Categoria = cm;
             socio.listarsocios.Add(soc);
-
+            
             ActualizarGrid();
             Limpiar();
         }
-
+        
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnBorrar_Click(object sender, EventArgs e)
+        {
+            Socios soc = (Socios)dgvSocio.CurrentRow.DataBoundItem;
+            if (soc != null)
+            {
+                socio.listarsocios.Remove(soc);
+            }
+            ActualizarGrid();
         }
     }
 }
