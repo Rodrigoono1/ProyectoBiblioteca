@@ -132,6 +132,7 @@
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -159,6 +160,7 @@
             this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // lblIdioma
             // 
@@ -236,7 +238,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmLibro";
             this.Text = "Libro";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmLibro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

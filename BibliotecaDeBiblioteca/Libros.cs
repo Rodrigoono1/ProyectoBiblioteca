@@ -14,7 +14,11 @@ namespace BibliotecaDeBiblioteca
 
     public enum Genero
     {
-
+        Novela,
+        Historia,
+        Comedia,
+        Terror,
+        Romance
     }
     public class Libros
     {
@@ -31,6 +35,13 @@ namespace BibliotecaDeBiblioteca
             this.titulo = titulo;
             this.ISBN = isbn;
             this.año = año;
+        }
+
+        public static List<Libros> listalibros = new List<Libros>();
+
+        public static void AgregarLibros(Libros l)
+        {
+            listalibros.Add(l);
         }
         public override string ToString()
         {

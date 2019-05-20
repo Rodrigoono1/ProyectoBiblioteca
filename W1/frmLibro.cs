@@ -18,13 +18,41 @@ namespace W1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmLibro_Load(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios() { Nro_documento = "1234567", Nombre = "Jose", Apellido = "Gonzalez", Email = "jgonzalez@intro.com.py", Direccion = "su casa",Usuario= "jgonzalez", Contrasenha="prueba123", CargoUsuario=Cargo.Usuario };
-            Socios socio = new Socios() { Nro_documento = "1234568", Nombre = "Alfredo", Apellido = "Rodriguez", Email = "alfredor@micorreo.com", Direccion = "al lado de Jose" };
-            Prestamos prestamo = new Prestamos(Convert.ToDateTime("15/04/2019"));
-            Libros libro = new Libros() { titulo="El Padrino"};
-            lblTitulo.Text=prestamo.MostrarPrestamo(socio,usuario,libro);
+            cmbGenero.DataSource = Enum.GetValues(typeof(Genero));
+            cmbIdioma.DataSource = Enum.GetValues(typeof(Idioma));
+            cmbIdioma.SelectedItem = null;
+            cmbGenero.SelectedItem = null;
+            dgvLibro.AutoGenerateColumns = true;
+            ActualizarListaLibros();
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            Libros book = CargaLibro();
+            Libros.listalibros.Add(book);
+            ActualizarListaLibros();
+        }
+        private Libros CargaLibro()
+        {
+            Libros libro = new Libros();
+            libro.titulo = txtTitulo.Text;
+            libro.ISBN = txtISBN.Text;
+            libro.año = Convert.ToInt16(txtAñoPublicacion.Text);
+            libro.idioma = (Idioma)cmbIdioma.SelectedItem;
+            libro.genero = (Genero)cmbGenero.SelectedItem;
+            return libro;
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void ActualizarListaLibros()
+        {
+            dgvLibro.DataSource = null;
+            dgvLibro.DataSource = Libros.listalibros;
         }
     }
 }
