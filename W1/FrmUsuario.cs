@@ -34,6 +34,8 @@ namespace W1
 
         private void LimpiarForm()
         {
+            cboCargo.Enabled = true;
+            txtcontrasena.Enabled = true;
             txtNombre.Clear();
             txtApellido.Clear();
             txtTelefono.Clear();
@@ -72,7 +74,28 @@ namespace W1
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            //Funcion a ser implementada al agregar permisos a los usuarios
+            int index = lstUsuarios.SelectedIndex;
+            Usuarios.listausuarios[index] = DefUsuarios();
+
+            ActualizarListaUsuario();
+            LimpiarForm();
+        }
+
+        private void LstUsuarios_Click(object sender, EventArgs e)
+        {
+            txtcontrasena.Enabled = false;
+            cboCargo.Enabled = false;
+            Usuarios user = (Usuarios)lstUsuarios.SelectedItem;
+            if (user != null)
+            {
+                txtNombre.Text = user.Nombre;
+                txtApellido.Text = user.Apellido;
+                txtTelefono.Text = user.Telefono;
+                txtDireccion.Text = user.Direccion;
+                txtUsuario.Text = user.Usuario;
+                txtcontrasena.Text = user.Contrasenha;
+                cboCargo.SelectedItem = user.CargoUsuario;
+            }
         }
     }
 }

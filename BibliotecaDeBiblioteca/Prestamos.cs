@@ -27,7 +27,9 @@ namespace BibliotecaDeBiblioteca
             this.usuario= encargado;
             this.libro = objeto;
 
-            return String.Format("{0} prestado a {1} {2} por {3} {4} en fecha {5}", this.libro.titulo, this.socio.Nombre, this.usuario.Nombre, this.fechaInicio);
+
+
+            return String.Format("{0} prestado a {1} {2} en fecha {3}", this.libro.titulo, this.socio.Nombre, this.socio.Apellido, this.fechaInicio);
         }
     }
 }

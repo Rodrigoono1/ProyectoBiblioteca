@@ -152,6 +152,7 @@
             this.lstUsuarios.Name = "lstUsuarios";
             this.lstUsuarios.Size = new System.Drawing.Size(226, 394);
             this.lstUsuarios.TabIndex = 12;
+            this.lstUsuarios.Click += new System.EventHandler(this.LstUsuarios_Click);
             // 
             // lblCargo
             // 
