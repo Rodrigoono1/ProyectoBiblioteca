@@ -50,7 +50,7 @@ namespace W1
 
         private void BtnAgregar_Click_1(object sender, EventArgs e)
         {
-            string cm = cmbCategoria.Text.ToString();
+            string cmb = cmbCategoria.Text.ToString();
 
             Socios soc = new Socios();
             soc.Nro_documento = txtNroDoc.Text;
@@ -59,7 +59,7 @@ namespace W1
             soc.Email = txtEmail.Text;
             soc.Telefono = txtTelefono.Text;
             soc.Direccion = txtDireccion.Text;
-            soc.Categoria = cm;
+            soc.Categoria = cmb;
             socio.listarsocios.Add(soc);
             
             ActualizarGrid();
@@ -71,6 +71,7 @@ namespace W1
             Close();
         }
 
+        //ver como hacer funcionar modificar con datagrid con el profe
         private void BtnModificar_Click(object sender, EventArgs e)
         {
 
