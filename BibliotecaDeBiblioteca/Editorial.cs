@@ -22,5 +22,26 @@ namespace BibliotecaDeBiblioteca
             this.idEditorial = idEditorial;
             this.telefono = telefono;
         }
+
+        public static List<Editorial> listaEditoriales = new List<Editorial>();
+
+        public static void AgregarEditorial(Editorial e)
+        {
+            listaEditoriales.Add(e);
+        }
+
+        public static void EliminarEditorial(Editorial e)
+        {
+            listaEditoriales.Remove(e);
+        }
+
+        public static List<Editorial> ObtenerEditorial()
+        {
+            return listaEditoriales;
+        }
+
+        public override string ToString()
+        {
+            return this.nombre;
+        }
     }
-}
