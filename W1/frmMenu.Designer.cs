@@ -34,6 +34,7 @@
             this.tsmEditorial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmLibro = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSocio = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPrestamo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmDevolucion = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +49,7 @@
             this.procesosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(657, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(493, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,38 +59,46 @@
             this.tsmAutor,
             this.tsmEditorial,
             this.tsmLibro,
-            this.tsmSocio});
+            this.tsmSocio,
+            this.usuarioToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             // 
             // tsmAutor
             // 
             this.tsmAutor.Name = "tsmAutor";
-            this.tsmAutor.Size = new System.Drawing.Size(140, 26);
+            this.tsmAutor.Size = new System.Drawing.Size(117, 22);
             this.tsmAutor.Text = "Autor";
             this.tsmAutor.Click += new System.EventHandler(this.TsmAutor_Click);
             // 
             // tsmEditorial
             // 
             this.tsmEditorial.Name = "tsmEditorial";
-            this.tsmEditorial.Size = new System.Drawing.Size(140, 26);
+            this.tsmEditorial.Size = new System.Drawing.Size(117, 22);
             this.tsmEditorial.Text = "Editorial";
             this.tsmEditorial.Click += new System.EventHandler(this.TsmEditorial_Click);
             // 
             // tsmLibro
             // 
             this.tsmLibro.Name = "tsmLibro";
-            this.tsmLibro.Size = new System.Drawing.Size(140, 26);
+            this.tsmLibro.Size = new System.Drawing.Size(117, 22);
             this.tsmLibro.Text = "Libro";
             this.tsmLibro.Click += new System.EventHandler(this.TsmLibro_Click);
             // 
             // tsmSocio
             // 
             this.tsmSocio.Name = "tsmSocio";
-            this.tsmSocio.Size = new System.Drawing.Size(140, 26);
+            this.tsmSocio.Size = new System.Drawing.Size(117, 22);
             this.tsmSocio.Text = "Socio";
             this.tsmSocio.Click += new System.EventHandler(this.TsmSocio_Click);
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.UsuarioToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -98,28 +106,28 @@
             this.tsmPrestamo,
             this.tsmDevolucion});
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
-            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.procesosToolStripMenuItem.Text = "Procesos";
             // 
             // tsmPrestamo
             // 
             this.tsmPrestamo.Name = "tsmPrestamo";
-            this.tsmPrestamo.Size = new System.Drawing.Size(216, 26);
+            this.tsmPrestamo.Size = new System.Drawing.Size(134, 22);
             this.tsmPrestamo.Text = "Préstamo";
             // 
             // tsmDevolucion
             // 
             this.tsmDevolucion.Name = "tsmDevolucion";
-            this.tsmDevolucion.Size = new System.Drawing.Size(216, 26);
+            this.tsmDevolucion.Size = new System.Drawing.Size(134, 22);
             this.tsmDevolucion.Text = "Devolución";
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 575);
+            this.ClientSize = new System.Drawing.Size(493, 467);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.IsMdiContainer = true;
             this.Name = "frmMenu";
             this.Text = "Menú";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -141,5 +149,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmAutor;
         private System.Windows.Forms.ToolStripMenuItem tsmEditorial;
         private System.Windows.Forms.ToolStripMenuItem tsmSocio;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
     }
 }
