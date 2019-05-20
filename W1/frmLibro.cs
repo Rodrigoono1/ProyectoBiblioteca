@@ -25,12 +25,14 @@ namespace W1
             cmbIdioma.SelectedItem = null;
             cmbGenero.SelectedItem = null;
             dgvLibro.AutoGenerateColumns = true;
+            ActualizarListaLibros();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             Libros book = CargaLibro();
             Libros.listalibros.Add(book);
+            ActualizarListaLibros();
         }
         private Libros CargaLibro()
         {
@@ -46,6 +48,11 @@ namespace W1
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void ActualizarListaLibros()
+        {
+            dgvLibro.DataSource = null;
+            dgvLibro.DataSource = Libros.listalibros;
         }
     }
 }
