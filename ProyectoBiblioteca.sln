@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W1", "W1\W1.csproj", "{C152A057-58A5-4CCD-8977-186675B4912F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioForm", "W1\BiblioForm.csproj", "{C152A057-58A5-4CCD-8977-186675B4912F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaDeBiblioteca", "BibliotecaDeBiblioteca\BibliotecaDeBiblioteca.csproj", "{37C313EB-B2D2-4D99-801E-9E5A6004ABE5}"
 EndProject
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E66D897F-C2CC-48F3-9534-BE57E08860B8}
 	EndGlobalSection
 EndGlobal
