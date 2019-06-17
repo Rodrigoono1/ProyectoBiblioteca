@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaDeBiblioteca;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,26 @@ namespace W1
         public frmPrestamos()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPrestamos_Load(object sender, EventArgs e)
+        {
+            dtgDetallePrestamo.AutoGenerateColumns = true;
+            cmbSocio.DataSource = Socios.ObtenerSocios();
+            cmbProveedor.DataSource = Proveedor.ObtenerProveedores();
+            cmbSocio.SelectedItem = null;
+            cmbProveedor.SelectedItem = null;
+            pedido = new Pedido();
         }
     }
 }
