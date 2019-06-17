@@ -35,7 +35,7 @@ namespace W1
             //cmbProveedor.DataSource = Proveedor.ObtenerProveedores();
             cmbSocio.SelectedItem = null;
             cmbProveedor.SelectedItem = null;
-            pedido = new Pedido();
+            pedido = new Pedido();*/
         }
     }
 }
