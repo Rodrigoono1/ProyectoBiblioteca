@@ -75,7 +75,7 @@ namespace BibliotecaDeBiblioteca
 
         public static void CrearUsuario(Usuarios user)
         {
-            string password_protegido = EncodePassword(user.Contrasenha);
+            //string password_protegido = EncodePassword(user.Contrasenha);
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION)) 
             {
                 con.Open();
@@ -85,7 +85,7 @@ namespace BibliotecaDeBiblioteca
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 SqlParameter p1 = new SqlParameter("@Usuario", user.Usuario.Trim());
-                SqlParameter p2 = new SqlParameter("@password", password_protegido);
+                SqlParameter p2 = new SqlParameter("@password", user.Contrasenha);
                 SqlParameter p3 = new SqlParameter("@nombre", user.Nombre);
                 SqlParameter p4 = new SqlParameter("@apellido", user.Apellido);
                 SqlParameter p5 = new SqlParameter("@email", user.Email);
