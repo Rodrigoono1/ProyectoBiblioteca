@@ -30,12 +30,12 @@ namespace W1
 
         private void frmPrestamos_Load(object sender, EventArgs e)
         {
-            dtgDetallePrestamo.AutoGenerateColumns = true;
+            /*dtgDetallePrestamo.AutoGenerateColumns = true;
             cmbSocio.DataSource = Socios.ObtenerSocios();
             cmbProveedor.DataSource = Proveedor.ObtenerProveedores();
             cmbSocio.SelectedItem = null;
             cmbProveedor.SelectedItem = null;
-            pedido = new Pedido();
+            pedido = new Pedido();*/
         }
     }
 }
