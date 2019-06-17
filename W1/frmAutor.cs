@@ -20,25 +20,67 @@ namespace W1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Autor autor = ObtenerAutorFormulario();
+            Autor autor = new Autor();
+            autor.Escritor = txtNombre.Text;
+            autor.Nacionalidad = txtNacionalidad.Text;
+            autor.Fecha_Nacimiento = dtpFecha.Value.Date;
 
             Autor.AgregarAutor(autor);
-
+            LimpiarFormulario();
             ActualizarListaAutor();
+        }
+
+        private void LimpiarFormulario()
+        {
+            txtNombre.Text = "";
+            txtNacionalidad.Text = "";
+            dtpFecha.Value = DateTime.Now;
+            
         }
 
         private void ActualizarListaAutor()
         {
-            dgvAutor.DataSource = null;
-            dgvAutor.DataSource = Autor.ObtenerAutor();
+            lstAutor.DataSource = null;
+            lstAutor.DataSource = Autor.ObtenerAutor();
         }
 
         private Autor ObtenerAutorFormulario()
         {
             Autor autor = new Autor();
-            autor.Nombre = txtNombre.Text;
+            autor.Escritor = txtNombre.Text;
             autor.Nacionalidad = txtNacionalidad.Text;
+            autor.Fecha_Nacimiento = dtpFecha.Value.Date;
             return autor;
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            int index = lstAutor.SelectedIndex;
+            Autor a = ObtenerAutorFormulario();
+            Autor.EditarAutor(index, a);
+
+            LimpiarFormulario();
+            ActualizarListaAutor();
+        }
+
+        private void BtnBorrar_Click(object sender, EventArgs e)
+        {
+            if (this.lstAutor.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Seleccione un Item");
+            }
+            else
+            {
+                Autor a = (Autor)lstAutor.SelectedItem;
+                Autor.BorrarAutor(a);
+                ActualizarListaAutor();
+                LimpiarFormulario();
+            }
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
