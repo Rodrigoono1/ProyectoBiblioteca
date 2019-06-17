@@ -152,7 +152,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(856, 405);
+            this.ClientSize = new System.Drawing.Size(1202, 751);
             this.Controls.Add(this.lstAutor);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblAñoNacimiento);
@@ -167,6 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAutor";
             this.Text = "Autor";
+            this.Load += new System.EventHandler(this.FrmAutor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -13,6 +13,7 @@ namespace W1
 {
     public partial class frmAutor : Form
     {
+      
         public frmAutor()
         {
             InitializeComponent();
@@ -24,12 +25,12 @@ namespace W1
             autor.Escritor = txtNombre.Text;
             autor.Nacionalidad = txtNacionalidad.Text;
             autor.Fecha_Nacimiento = dtpFecha.Value.Date;
-
             Autor.AgregarAutor(autor);
+
             LimpiarFormulario();
             ActualizarListaAutor();
         }
-
+       
         private void LimpiarFormulario()
         {
             txtNombre.Text = "";
@@ -81,6 +82,11 @@ namespace W1
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmAutor_Load(object sender, EventArgs e)
+        {
+            lstAutor.DataSource = Autor.ObtenerAutor();
         }
     }
 }
