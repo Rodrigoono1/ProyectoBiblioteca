@@ -125,7 +125,6 @@ namespace BibliotecaDeBiblioteca
                 con.Open();
 
                 string textoCmd = "SELECT Usuario, password from Usuario where Usuario = @Usuario and password = @password";
-                //string textoCmd = "Select Usuario, Password from Usuario";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 SqlParameter p1 = new SqlParameter("@Usuario", usuario.Trim());
@@ -154,7 +153,7 @@ namespace BibliotecaDeBiblioteca
         }
 
 
-        public static string EncodePassword(string originalPassword)
+        /*public static string EncodePassword(string originalPassword)
         {
 
             SHA1 sha1 = new SHA1CryptoServiceProvider();
@@ -164,7 +163,7 @@ namespace BibliotecaDeBiblioteca
             byte[] hash = sha1.ComputeHash(inputBytes);
 
             return Convert.ToBase64String(hash);
-        }
+        }*/
 
     }
 }
