@@ -32,10 +32,10 @@ namespace W1
         {
             /*dtgDetallePrestamo.AutoGenerateColumns = true;
             cmbSocio.DataSource = Socios.ObtenerSocios();
-            cmbProveedor.DataSource = Proveedor.ObtenerProveedores();
+            //cmbProveedor.DataSource = Proveedor.ObtenerProveedores();
             cmbSocio.SelectedItem = null;
             cmbProveedor.SelectedItem = null;
-            pedido = new Pedido();*/
+            pedido = new Pedido();
         }
     }
 }
