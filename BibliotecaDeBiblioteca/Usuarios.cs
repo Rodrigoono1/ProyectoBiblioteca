@@ -24,7 +24,7 @@ namespace BibliotecaDeBiblioteca
                 this.Nombre = nombre;
                 this.Apellido = apellido;
                 this.Telefono = telefono;
-                this.Direccion = direccion;
+            this.Direccion = direccion;
                 this.Usuario = usuario;
                 this.Contrasenha = contrasenha;
                 this.CargoUsuario = cargo;
