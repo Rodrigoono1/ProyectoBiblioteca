@@ -15,7 +15,7 @@ namespace BibliotecaDeBiblioteca
         public string Libro { get; set; }
         public string Fecha_Prestamo { get; set; }
         public string Fecha_Devolucion { get; set; }
-
+        //si
         public Devoluciones() { }
        
         public List<Devoluciones> listardevoluciones = new List<Devoluciones>();
