@@ -67,17 +67,20 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"UPDATE Autor SET Escritor= @Escritor, Nacionalidad= @Nacionalidad, Fecha_Nacimiento = @Fecha_Nacimiento Id = @Id";
+                string textoCmd = @"UPDATE Autor SET Escritor= @Escritor, Nacionalidad= @Nacionalidad, Fecha_Nacimiento = @Fecha_Nacimiento where Id = @Id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 SqlParameter p1 = new SqlParameter("@Escritor", a.Escritor);
                 SqlParameter p2 = new SqlParameter("@Nacionalidad", a.Nacionalidad);
                 SqlParameter p3 = new SqlParameter("@Fecha_Nacimiento", a.Fecha_Nacimiento);
+                SqlParameter p4 = new SqlParameter("@Id", a.Id);
                 p1.SqlDbType = SqlDbType.VarChar;
                 p2.SqlDbType = SqlDbType.VarChar;
                 p3.SqlDbType = SqlDbType.DateTime;
+                p4.SqlDbType = SqlDbType.Int;
                 cmd.Parameters.Add(p1);
                 cmd.Parameters.Add(p2);
                 cmd.Parameters.Add(p3);
+                cmd.Parameters.Add(p4);
 
                 cmd.ExecuteNonQuery();
             }

@@ -66,5 +66,10 @@ namespace W1
         {
             Close();
         }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
