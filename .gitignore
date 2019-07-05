@@ -338,6 +338,3 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-
-#appconfig para conexiones
-App.config
