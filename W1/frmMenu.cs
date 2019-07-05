@@ -46,5 +46,11 @@ namespace W1
             frmUsuario form = new frmUsuario();
             form.Show();
         }
+
+        private void AcercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Desarrollado por Team Cannon \n" +
+                "-Diego Benitez \n" + "-Renato Jara \n" + "-Barbara Morales \n" + "-Rodrigo Ono \n" + "-Jose Yegros");
+        }
     }
 }

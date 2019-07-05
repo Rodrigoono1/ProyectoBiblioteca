@@ -26,6 +26,8 @@ namespace W1
             socio = new Socios();
             dgvSocio.AutoGenerateColumns = true;
             cmbCategoria.SelectedItem = null;
+            ActualizarGrid();
+            Limpiar();
 
 
         }
@@ -33,7 +35,10 @@ namespace W1
            private void ActualizarGrid()
         {
             dgvSocio.DataSource = null;
-            dgvSocio.DataSource = socio.listarsocios;
+            dgvSocio.DataSource = Socios.ObtenerSocios();
+            dgvSocio.Columns["Nro_documento"].DisplayIndex = 0;
+            dgvSocio.Columns["Categoria"].DisplayIndex = 7;
+            dgvSocio.Columns["Nro_documento"].HeaderText = "Nro. Cedula";
         }
 
         private void Limpiar()
@@ -44,25 +49,9 @@ namespace W1
             txtNroDoc.Text = "";
             txtTelefono.Text = "";
             txtEmail.Text = "";
+            txtNacionalidad.Clear();
             cmbCategoria.SelectedItem = null;
 
-        }
-
-        private void BtnAgregar_Click_1(object sender, EventArgs e)
-        {
-
-            Socios soc = new Socios();
-            soc.Nro_documento = Convert.ToInt32(txtNroDoc.Text);
-            soc.Nombre = txtNombre.Text;
-            soc.Apellido = txtApellido.Text;
-            soc.Email = txtEmail.Text;
-            soc.Telefono = Convert.ToInt32(txtTelefono.Text);
-            soc.Direccion = txtDireccion.Text;
-            soc.Categoria = (Categoria)cmbCategoria.SelectedItem;
-            socio.listarsocios.Add(soc);
-            
-            ActualizarGrid();
-            Limpiar();
         }
         
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -86,5 +75,21 @@ namespace W1
             ActualizarGrid();
         }
 
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            Socios soc = new Socios();
+            soc.Nro_documento = Convert.ToInt32(txtNroDoc.Text);
+            soc.Nombre = txtNombre.Text;
+            soc.Apellido = txtApellido.Text;
+            soc.Email = txtEmail.Text;
+            soc.Telefono = Convert.ToInt32(txtTelefono.Text);
+            soc.Direccion = txtDireccion.Text;
+            soc.Categoria = (Categoria)cmbCategoria.SelectedItem;
+            soc.Nacionalidad = txtNacionalidad.Text;
+            Socios.CrearSocio(soc);
+
+            ActualizarGrid();
+            Limpiar();
+        }
     }
 }

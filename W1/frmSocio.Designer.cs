@@ -48,6 +48,8 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.txtNacionalidad = new System.Windows.Forms.TextBox();
+            this.lblNacionalidad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +127,7 @@
             this.dgvSocio.Location = new System.Drawing.Point(312, 30);
             this.dgvSocio.Name = "dgvSocio";
             this.dgvSocio.Size = new System.Drawing.Size(388, 246);
-            this.dgvSocio.TabIndex = 7;
+            this.dgvSocio.TabIndex = 9;
             // 
             // btnSalir
             // 
@@ -133,7 +135,7 @@
             this.btnSalir.Location = new System.Drawing.Point(444, 336);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -144,7 +146,7 @@
             this.btnBorrar.Location = new System.Drawing.Point(343, 336);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrar.TabIndex = 10;
+            this.btnBorrar.TabIndex = 11;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
@@ -155,7 +157,7 @@
             this.btnModificar.Location = new System.Drawing.Point(241, 336);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 9;
+            this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
@@ -169,7 +171,7 @@
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click_1);
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // txtApellido
             // 
@@ -209,7 +211,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCategoria.Location = new System.Drawing.Point(43, 263);
+            this.lblCategoria.Location = new System.Drawing.Point(43, 297);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblCategoria.TabIndex = 21;
@@ -217,12 +219,30 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(158, 260);
+            this.cmbCategoria.Location = new System.Drawing.Point(158, 294);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(100, 21);
-            this.cmbCategoria.TabIndex = 6;
+            this.cmbCategoria.TabIndex = 7;
+            // 
+            // txtNacionalidad
+            // 
+            this.txtNacionalidad.Location = new System.Drawing.Point(158, 256);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(100, 20);
+            this.txtNacionalidad.TabIndex = 6;
+            // 
+            // lblNacionalidad
+            // 
+            this.lblNacionalidad.AutoSize = true;
+            this.lblNacionalidad.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNacionalidad.Location = new System.Drawing.Point(43, 259);
+            this.lblNacionalidad.Name = "lblNacionalidad";
+            this.lblNacionalidad.Size = new System.Drawing.Size(69, 13);
+            this.lblNacionalidad.TabIndex = 23;
+            this.lblNacionalidad.Text = "Nacionalidad";
             // 
             // frmSocio
             // 
@@ -232,6 +252,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(748, 427);
+            this.Controls.Add(this.txtNacionalidad);
+            this.Controls.Add(this.lblNacionalidad);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.txtEmail);
@@ -284,5 +306,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.TextBox txtNacionalidad;
+        private System.Windows.Forms.Label lblNacionalidad;
     }
 }

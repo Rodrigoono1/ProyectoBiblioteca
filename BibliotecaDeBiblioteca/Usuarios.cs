@@ -78,7 +78,7 @@ namespace BibliotecaDeBiblioteca
             {
                 Persona p = new Persona(user.Nro_documento, user.Nombre, user.Apellido, user.Telefono, user.Direccion);
 
-                Persona.CrearPersona(p);
+                Persona.CrearPersonapUsuario(p);
 
                 con.Open();
 
@@ -139,8 +139,9 @@ namespace BibliotecaDeBiblioteca
             }
         }
 
-        }
-        private SqlCommand ObtenerParametroId(SqlCommand cmd)
+        
+
+    private SqlCommand ObtenerParametroId(SqlCommand cmd)
         {
             SqlParameter p90 = new SqlParameter("@Nro_Documento", this.Nro_documento);
             p90.SqlDbType = SqlDbType.Int;
@@ -155,7 +156,7 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 Persona person = new Persona(u.Nro_documento,u.Nombre,u.Apellido, u.Telefono, u.Direccion);
-                Persona.EditarPersona(index, person);
+                Persona.EditarPersonapUsuario(index, person);
                 con.Open();
                 string textoCmd = @"UPDATE Usuario SET Nro_Documento = @Nro_Documento, Usuario = @Usuario, Password = @Password , Cargo = @Cargo where Nro_Documento= @Nro_Documento";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
