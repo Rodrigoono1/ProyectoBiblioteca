@@ -52,7 +52,7 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"delete from Autor where Id = @Id";
+                string textoCmd = @"delete from Editorial where Id = @Id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 SqlParameter p5 = new SqlParameter("@Id", e.Id);
                 p5.SqlDbType = SqlDbType.Int;
