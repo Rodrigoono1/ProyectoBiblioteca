@@ -48,6 +48,7 @@ namespace W1
         private Autor ObtenerAutorFormulario()
         {
             Autor autor = new Autor();
+            autor.Id = Convert.ToInt16(txtId.Text);
             autor.Escritor = txtNombre.Text;
             autor.Nacionalidad = txtNacionalidad.Text;
             autor.Fecha_Nacimiento = dtpFecha.Value.Date;
@@ -87,6 +88,19 @@ namespace W1
         private void FrmAutor_Load(object sender, EventArgs e)
         {
             lstAutor.DataSource = Autor.ObtenerAutor();
+        }
+
+        private void LstAutor_Click(object sender, EventArgs e)
+        {
+            Autor a = (Autor)lstAutor.SelectedItem;
+
+            if (a != null)
+            {
+                txtId.Text = Convert.ToString(a.Id);
+                txtNombre.Text = a.Escritor;
+                txtNacionalidad.Text = a.Nacionalidad;
+                dtpFecha.Value= a.Fecha_Nacimiento;
+            }
         }
     }
 }

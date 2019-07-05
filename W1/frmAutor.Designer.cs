@@ -40,15 +40,18 @@
             this.lblAñoNacimiento = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lstAutor = new System.Windows.Forms.ListBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.lblNombre.Location = new System.Drawing.Point(28, 41);
+            this.lblNombre.Location = new System.Drawing.Point(37, 50);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
@@ -56,18 +59,20 @@
             // 
             this.lblNacionalidad.AutoSize = true;
             this.lblNacionalidad.BackColor = System.Drawing.SystemColors.Control;
-            this.lblNacionalidad.Location = new System.Drawing.Point(28, 84);
+            this.lblNacionalidad.Location = new System.Drawing.Point(37, 103);
+            this.lblNacionalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNacionalidad.Name = "lblNacionalidad";
-            this.lblNacionalidad.Size = new System.Drawing.Size(69, 13);
+            this.lblNacionalidad.Size = new System.Drawing.Size(90, 17);
             this.lblNacionalidad.TabIndex = 1;
             this.lblNacionalidad.Text = "Nacionalidad";
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(99, 321);
+            this.btnSalir.Location = new System.Drawing.Point(132, 405);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -76,9 +81,10 @@
             // btnBorrar
             // 
             this.btnBorrar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBorrar.Location = new System.Drawing.Point(99, 276);
+            this.btnBorrar.Location = new System.Drawing.Point(132, 350);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
@@ -87,9 +93,10 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(99, 234);
+            this.btnModificar.Location = new System.Drawing.Point(132, 298);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -98,9 +105,10 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregar.Location = new System.Drawing.Point(99, 191);
+            this.btnAgregar.Location = new System.Drawing.Point(132, 245);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -108,53 +116,82 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(151, 38);
+            this.txtNombre.Location = new System.Drawing.Point(201, 47);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(132, 22);
             this.txtNombre.TabIndex = 0;
             // 
             // txtNacionalidad
             // 
-            this.txtNacionalidad.Location = new System.Drawing.Point(151, 81);
+            this.txtNacionalidad.Location = new System.Drawing.Point(201, 100);
+            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(100, 20);
+            this.txtNacionalidad.Size = new System.Drawing.Size(132, 22);
             this.txtNacionalidad.TabIndex = 1;
             // 
             // lblAñoNacimiento
             // 
             this.lblAñoNacimiento.AutoSize = true;
             this.lblAñoNacimiento.BackColor = System.Drawing.SystemColors.Control;
-            this.lblAñoNacimiento.Location = new System.Drawing.Point(28, 127);
+            this.lblAñoNacimiento.Location = new System.Drawing.Point(37, 156);
+            this.lblAñoNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAñoNacimiento.Name = "lblAñoNacimiento";
-            this.lblAñoNacimiento.Size = new System.Drawing.Size(97, 13);
+            this.lblAñoNacimiento.Size = new System.Drawing.Size(127, 17);
             this.lblAñoNacimiento.TabIndex = 19;
             this.lblAñoNacimiento.Text = "Año de Nacimiento";
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(151, 127);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFecha.Location = new System.Drawing.Point(201, 154);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(132, 22);
             this.dtpFecha.TabIndex = 2;
             // 
             // lstAutor
             // 
             this.lstAutor.FormattingEnabled = true;
-            this.lstAutor.Location = new System.Drawing.Point(304, 22);
-            this.lstAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstAutor.ItemHeight = 16;
+            this.lstAutor.Location = new System.Drawing.Point(405, 27);
+            this.lstAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstAutor.Name = "lstAutor";
-            this.lstAutor.Size = new System.Drawing.Size(261, 342);
+            this.lstAutor.Size = new System.Drawing.Size(347, 420);
             this.lstAutor.TabIndex = 3;
+            this.lstAutor.Click += new System.EventHandler(this.LstAutor_Click);
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.BackColor = System.Drawing.SystemColors.Control;
+            this.lblId.Location = new System.Drawing.Point(37, 201);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(19, 17);
+            this.lblId.TabIndex = 20;
+            this.lblId.Text = "Id";
+            this.lblId.Visible = false;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(201, 198);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(132, 22);
+            this.txtId.TabIndex = 21;
+            this.txtId.Visible = false;
             // 
             // frmAutor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(629, 394);
+            this.ClientSize = new System.Drawing.Size(839, 485);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.lstAutor);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblAñoNacimiento);
@@ -167,6 +204,7 @@
             this.Controls.Add(this.lblNacionalidad);
             this.Controls.Add(this.lblNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmAutor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -190,5 +228,7 @@
         private System.Windows.Forms.Label lblAñoNacimiento;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.ListBox lstAutor;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
