@@ -37,21 +37,23 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.dgvEditorial = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditorial)).BeginInit();
+            this.lstEditorial = new System.Windows.Forms.ListBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.lblNombre.Location = new System.Drawing.Point(30, 34);
+            this.lblNombre.Location = new System.Drawing.Point(40, 42);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
@@ -59,9 +61,10 @@
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDireccion.Location = new System.Drawing.Point(30, 73);
+            this.lblDireccion.Location = new System.Drawing.Point(40, 90);
+            this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.Size = new System.Drawing.Size(67, 17);
             this.lblDireccion.TabIndex = 1;
             this.lblDireccion.Text = "Dirección";
             // 
@@ -69,9 +72,10 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.BackColor = System.Drawing.SystemColors.Control;
-            this.lblTelefono.Location = new System.Drawing.Point(30, 111);
+            this.lblTelefono.Location = new System.Drawing.Point(40, 137);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(64, 17);
             this.lblTelefono.TabIndex = 2;
             this.lblTelefono.Text = "Teléfono";
             // 
@@ -79,54 +83,52 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEmail.Location = new System.Drawing.Point(30, 148);
+            this.lblEmail.Location = new System.Drawing.Point(40, 182);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.Size = new System.Drawing.Size(47, 17);
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "E-mail";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(114, 31);
+            this.txtNombre.Location = new System.Drawing.Point(152, 38);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(132, 22);
             this.txtNombre.TabIndex = 0;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(114, 70);
+            this.txtDireccion.Location = new System.Drawing.Point(152, 86);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(132, 22);
             this.txtDireccion.TabIndex = 1;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(114, 108);
+            this.txtTelefono.Location = new System.Drawing.Point(152, 133);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(132, 22);
             this.txtTelefono.TabIndex = 2;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(114, 145);
+            this.txtEmail.Location = new System.Drawing.Point(152, 178);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(132, 22);
             this.txtEmail.TabIndex = 3;
-            // 
-            // dgvEditorial
-            // 
-            this.dgvEditorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEditorial.Location = new System.Drawing.Point(253, 15);
-            this.dgvEditorial.Name = "dgvEditorial";
-            this.dgvEditorial.Size = new System.Drawing.Size(352, 163);
-            this.dgvEditorial.TabIndex = 4;
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(385, 225);
+            this.btnSalir.Location = new System.Drawing.Point(513, 277);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -135,9 +137,10 @@
             // btnBorrar
             // 
             this.btnBorrar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBorrar.Location = new System.Drawing.Point(293, 225);
+            this.btnBorrar.Location = new System.Drawing.Point(391, 277);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
@@ -146,36 +149,73 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(200, 225);
+            this.btnModificar.Location = new System.Drawing.Point(267, 277);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregar.Location = new System.Drawing.Point(108, 225);
+            this.btnAgregar.Location = new System.Drawing.Point(144, 277);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
+            // lstEditorial
+            // 
+            this.lstEditorial.FormattingEnabled = true;
+            this.lstEditorial.ItemHeight = 16;
+            this.lstEditorial.Location = new System.Drawing.Point(337, 17);
+            this.lstEditorial.Name = "lstEditorial";
+            this.lstEditorial.Size = new System.Drawing.Size(469, 196);
+            this.lstEditorial.TabIndex = 9;
+            this.lstEditorial.Click += new System.EventHandler(this.LstEditorial_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(152, 216);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(132, 22);
+            this.txtId.TabIndex = 10;
+            this.txtId.Visible = false;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblId.Location = new System.Drawing.Point(40, 220);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(19, 17);
+            this.lblId.TabIndex = 11;
+            this.lblId.Text = "Id";
+            this.lblId.Visible = false;
+            // 
             // frmEditorial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(634, 292);
+            this.ClientSize = new System.Drawing.Size(845, 359);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.lstEditorial);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgvEditorial);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDireccion);
@@ -185,12 +225,12 @@
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmEditorial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editorial";
             this.Load += new System.EventHandler(this.FrmEditorial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditorial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,10 +246,12 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.DataGridView dgvEditorial;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ListBox lstEditorial;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblId;
     }
 }

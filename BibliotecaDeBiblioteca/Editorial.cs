@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BibliotecaDeBiblioteca;
 
 namespace BibliotecaDeBiblioteca
 {
@@ -95,9 +96,8 @@ namespace BibliotecaDeBiblioteca
 
         public static List<Editorial> ObtenerEditoriales()
         {
-            //return lista editoriales;
             Editorial editorial;
-            Editorial.listaEditorial.Clear();
+            listaEditorial.Clear();
 
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
@@ -124,7 +124,7 @@ namespace BibliotecaDeBiblioteca
         }
 
 
-        public static Editorial ObtenerEditoriales(int id)
+        public static Editorial ObtenerEditorial(int id)
         {
             Editorial editorial = null;
 
@@ -144,6 +144,8 @@ namespace BibliotecaDeBiblioteca
 
 
         }
+
+       
 
         public override string ToString()
         {

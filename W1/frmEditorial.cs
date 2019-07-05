@@ -13,7 +13,7 @@ namespace W1
 {
     public partial class frmEditorial : Form
     {
-        Editorial edi;
+        
         public frmEditorial()
         {
             InitializeComponent();
@@ -27,22 +27,20 @@ namespace W1
             editor.Telefono = txtTelefono.Text;
             editor.Email = txtEmail.Text;
 
-            //editor.listareditoriales.Add(editor);
+            
             Editorial.AgregarEditorial(editor);
-            ActualizarGrid();
+            ActualizarLista();
             Limpiar();
+        }
+        private void ActualizarLista()
+        {
+            lstEditorial.DataSource = null;
+            lstEditorial.DataSource = Editorial.ObtenerEditoriales();
         }
 
         private void FrmEditorial_Load(object sender, EventArgs e)
         {
-            edi = new Editorial();
-            dgvEditorial.AutoGenerateColumns = true;
-            dgvEditorial.DataSource = Editorial.ObtenerEditoriales();
-        }
-        private void ActualizarGrid()
-        {
-            dgvEditorial.DataSource = null;
-            dgvEditorial.DataSource = Editorial.ObtenerEditoriales();
+            lstEditorial.DataSource = Editorial.ObtenerEditoriales();
         }
         private void Limpiar()
         {
@@ -55,15 +53,21 @@ namespace W1
 
         private void BtnBorrar_Click(object sender, EventArgs e)
         {
-            Editorial editor = (Editorial)dgvEditorial.CurrentRow.DataBoundItem;
-            if (editor != null)
+            if (this.lstEditorial.SelectedItems.Count ==0)
             {
-                //edi.listareditoriales.Remove(editor);
-                Editorial.BorrarEditorial(editor);
+                MessageBox.Show("Seleccione un Item");
+
             }
-            ActualizarGrid();
-            Limpiar();
+            else
+            {
+                Editorial ed = (Editorial)lstEditorial.SelectedItem;
+                Editorial.BorrarEditorial(ed);
+                ActualizarLista();
+                Limpiar();
+            }
         }
+            
+        
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
@@ -72,7 +76,40 @@ namespace W1
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
+            int index = lstEditorial.SelectedIndex;
+            Editorial ed = ObtenerEdi();
+            Editorial.EditarEditorial(index, ed);
 
+            Limpiar();
+            ActualizarLista();
+
+        }
+
+        private Editorial ObtenerEdi()
+        {
+            Editorial editor = new Editorial();
+            editor.Id = Convert.ToInt16(txtId.Text);
+            editor.Nombre = txtNombre.Text;
+            editor.Direccion = txtDireccion.Text;
+            editor.Telefono = txtTelefono.Text;
+            editor.Email = txtEmail.Text;
+            return editor;
+
+        }
+
+        private void LstEditorial_Click(object sender, EventArgs e)
+        {
+            Editorial ed = (Editorial)lstEditorial.SelectedItem;
+            
+            if (ed != null)
+            {
+                txtId.Text = Convert.ToString(ed.Id);
+                txtNombre.Text = ed.Nombre;
+                txtDireccion.Text = ed.Direccion;
+                txtTelefono.Text = ed.Telefono;
+                txtEmail.Text = ed.Email;
+
+            }
         }
     }
 }

@@ -148,36 +148,7 @@ namespace BibliotecaDeBiblioteca
 
 
 
-        /*   public Autor(int codigo, string nombre, string apellido)
-           {
-               this.Codigo = codigo;
-               this.Nombre = nombre;
-               this.Apellido = apellido;
-           }
-
-           public static List<Autor> listaAutores = new List<Autor>();
-
-           public static void AgregarAutor(Autor a)
-           {
-               listaAutores.Add(a);
-           }
-
-           public static void EliminarAutor(Autor a)
-           {
-               listaAutores.Remove(a);
-           }
-
-           public static List<Autor> ObtenerAutor()
-           {
-               return listaAutores;
-           }
-
-           public override string ToString()
-           {
-               return this.Nombre;
-           }
-
-        */
+        
 
     }
 }
