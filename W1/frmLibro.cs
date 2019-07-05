@@ -22,6 +22,9 @@ namespace W1
         {
             cmbGenero.DataSource = Enum.GetValues(typeof(Genero));
             cmbIdioma.DataSource = Enum.GetValues(typeof(Idioma));
+            cmbEditorial.DataSource = Editorial.ObtenerEditoriales();
+            cmbAutor.DataSource = Autor.ObtenerAutor();
+            cmbEditorial.SelectedItem = null;
             cmbIdioma.SelectedItem = null;
             cmbGenero.SelectedItem = null;
             dgvLibro.AutoGenerateColumns = true;
@@ -38,10 +41,13 @@ namespace W1
         {
             Libros libro = new Libros();
             libro.titulo = txtTitulo.Text;
-            libro.ISBN = txtISBN.Text;
-            libro.año = Convert.ToInt16(txtAñoPublicacion.Text);
+            libro.ISBN = Convert.ToInt32(txtISBN.Text);
+            libro.año = Convert.ToInt32(txtAñoPublicacion.Text);
             libro.idioma = (Idioma)cmbIdioma.SelectedItem;
             libro.genero = (Genero)cmbGenero.SelectedItem;
+            libro.editorial = (Editorial)cmbEditorial.SelectedItem;
+            libro.autor = (Autor)cmbAutor.SelectedItem;
+
             return libro;
         }
 
@@ -52,7 +58,8 @@ namespace W1
         private void ActualizarListaLibros()
         {
             dgvLibro.DataSource = null;
-            dgvLibro.DataSource = Libros.listalibros;
+            dgvLibro.DataSource = Libros.ObtenerLibros();
+            dgvLibro.Columns["ID"].Visible = false;
         }
     }
 }

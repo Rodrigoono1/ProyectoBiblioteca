@@ -14,7 +14,7 @@ namespace BibliotecaDeBiblioteca
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
-        public string Telefono { get; set; }
+        public int Telefono { get; set; }
         //public int idEditorial { get; set; }
         public string Email { get; set; }
 
@@ -35,7 +35,7 @@ namespace BibliotecaDeBiblioteca
                 SqlParameter p4 = new SqlParameter("@Email", e.Email);
                 p1.SqlDbType = SqlDbType.VarChar;
                 p2.SqlDbType = SqlDbType.VarChar;
-                p3.SqlDbType = SqlDbType.VarChar;
+                p3.SqlDbType = SqlDbType.Int;
                 p4.SqlDbType = SqlDbType.VarChar;
                 cmd.Parameters.Add(p1);
                 cmd.Parameters.Add(p2);
@@ -79,7 +79,7 @@ namespace BibliotecaDeBiblioteca
                 SqlParameter p5 = new SqlParameter("@Id", e.Id);
                 p1.SqlDbType = SqlDbType.VarChar;
                 p2.SqlDbType = SqlDbType.VarChar;
-                p3.SqlDbType = SqlDbType.VarChar;
+                p3.SqlDbType = SqlDbType.Int;
                 p4.SqlDbType = SqlDbType.VarChar;
                 p5.SqlDbType = SqlDbType.Int;
                 cmd.Parameters.Add(p1);
@@ -114,7 +114,7 @@ namespace BibliotecaDeBiblioteca
                     editorial.Id = elLectorDeDatos.GetInt32(0);
                     editorial.Nombre = elLectorDeDatos.GetString(1);
                     editorial.Direccion = elLectorDeDatos.GetString(2);
-                    editorial.Telefono = elLectorDeDatos.GetString(3);
+                    editorial.Telefono = elLectorDeDatos.GetInt32(3);
                     editorial.Email = elLectorDeDatos.GetString(4);
 
                     listaEditorial.Add(editorial);

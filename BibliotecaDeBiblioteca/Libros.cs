@@ -26,14 +26,15 @@ namespace BibliotecaDeBiblioteca
     {
         public int Id { get; set; }
         public string titulo { get; set; }
-        public string ISBN { get; set; }
+        public int ISBN { get; set; }
         public int año { get; set; }
         public Idioma idioma { get; set; }
         public Editorial editorial { get; set; }
         public Genero genero { get; set; }
+        public Autor autor { get; set; }
 
         public Libros() { }
-        public Libros(string titulo, string isbn, int año )
+        public Libros(string titulo, int isbn, int año )
         {
             this.titulo = titulo;
             this.ISBN = isbn;
@@ -56,7 +57,7 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "Select * from Libros";
+                string textoCmd = "Select l.*, a.Id from Libro l inner join AutorLibro al on l.Id = al.IdLibro inner join Autor a on a.Id= al.IdAutor";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
@@ -67,11 +68,12 @@ namespace BibliotecaDeBiblioteca
                     libro = new Libros();
                     libro.Id = elLectorDeDatos.GetInt32(0);
                     libro.titulo = elLectorDeDatos.GetString(1);
-                    libro.ISBN = elLectorDeDatos.GetString(2);
+                    libro.ISBN = elLectorDeDatos.GetInt32(2);
                     libro.año = elLectorDeDatos.GetInt32(3);
                     libro.idioma = (Idioma)elLectorDeDatos.GetInt32(4);
-  //                  libro.editorial = Editorial.ObtenerEditoriales(elLectorDeDatos.GetInt32(5));
-                    libro.genero = (Genero)elLectorDeDatos.GetInt32(6);
+                    libro.genero = (Genero)elLectorDeDatos.GetInt32(5);
+                    libro.editorial = Editorial.ObtenerEditorial(elLectorDeDatos.GetInt32(6));
+                    libro.autor = Autor.ObtenerAutores(elLectorDeDatos.GetInt32(7));
 
                     listalibros.Add(libro);
                 }

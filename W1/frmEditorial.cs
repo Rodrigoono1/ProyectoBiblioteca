@@ -24,7 +24,7 @@ namespace W1
             Editorial editor = new Editorial();
             editor.Nombre = txtNombre.Text;
             editor.Direccion = txtDireccion.Text;
-            editor.Telefono = txtTelefono.Text;
+            editor.Telefono = Convert.ToInt32(txtTelefono.Text);
             editor.Email = txtEmail.Text;
 
             
@@ -91,7 +91,7 @@ namespace W1
             editor.Id = Convert.ToInt16(txtId.Text);
             editor.Nombre = txtNombre.Text;
             editor.Direccion = txtDireccion.Text;
-            editor.Telefono = txtTelefono.Text;
+            editor.Telefono = Convert.ToInt32(txtTelefono.Text);
             editor.Email = txtEmail.Text;
             return editor;
 
@@ -106,7 +106,7 @@ namespace W1
                 txtId.Text = Convert.ToString(ed.Id);
                 txtNombre.Text = ed.Nombre;
                 txtDireccion.Text = ed.Direccion;
-                txtTelefono.Text = ed.Telefono;
+                txtTelefono.Text = Convert.ToString(ed.Telefono);
                 txtEmail.Text = ed.Email;
 
             }
