@@ -46,6 +46,7 @@ namespace W1
             txtcontrasena.Clear();
             cboCargo.SelectedItem = null;
             lstUsuarios.SelectedItem = null;
+            btnModificar.Enabled = false;
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace W1
         {
             Usuarios user = DefUsuarios();
 
-            Usuarios.AgregarUsuario(user);
+            Usuarios.CrearUsuario(user);
 
             ActualizarListaUsuario();
             LimpiarForm();
@@ -78,17 +79,21 @@ namespace W1
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            int index = lstUsuarios.SelectedIndex;
-            Usuarios.listausuarios[index] = DefUsuarios();
 
+            Usuarios u = (Usuarios)lstUsuarios.SelectedItem;
+            int index = lstUsuarios.SelectedIndex;
+            
+            Usuarios user = DefUsuarios();
+            Usuarios.EditarUsuario(index, user);
             ActualizarListaUsuario();
             LimpiarForm();
         }
 
         private void LstUsuarios_Click(object sender, EventArgs e)
         {
-            txtcontrasena.Enabled = false;
-            cboCargo.Enabled = false;
+            /*txtcontrasena.Enabled = false;
+            cboCargo.Enabled = false;*/
+            btnModificar.Enabled = true;
             Usuarios user = (Usuarios)lstUsuarios.SelectedItem;
             if (user != null)
             {

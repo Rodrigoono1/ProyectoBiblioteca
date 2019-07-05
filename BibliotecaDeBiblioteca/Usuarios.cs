@@ -37,7 +37,7 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "Select p.*, u.usuario, u.password, u.cargo from Usuario u Inner Join Persona p on p.Nro_documento = u.Nro_documento";
+                string textoCmd = "Select u.Nro_documento, p.Nombre, p.Apellido, p.Telefono, p.Direccion, u.usuario, u.password, u.cargo from Usuario u Inner Join Persona p on p.Nro_documento = u.Nro_documento";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
@@ -49,13 +49,11 @@ namespace BibliotecaDeBiblioteca
                     usuario.Nro_documento = elLectorDeDatos.GetInt32(0);
                     usuario.Nombre = elLectorDeDatos.GetString(1);
                     usuario.Apellido = elLectorDeDatos.GetString(2);
-                    usuario.Email = elLectorDeDatos.GetString(3);
-                    usuario.Telefono = elLectorDeDatos.GetInt32(4);
-                    usuario.Direccion = elLectorDeDatos.GetString(5);
-                    usuario.Nacionalidad = elLectorDeDatos.GetString(6);
-                    usuario.Usuario = elLectorDeDatos.GetString(7);
-                    usuario.Contrasenha = elLectorDeDatos.GetString(8);
-                    usuario.CargoUsuario = (Cargo)elLectorDeDatos.GetInt32(9);
+                    usuario.Telefono = elLectorDeDatos.GetInt32(3);
+                    usuario.Direccion = elLectorDeDatos.GetString(4);
+                    usuario.Usuario = elLectorDeDatos.GetString(5);
+                    usuario.Contrasenha = elLectorDeDatos.GetString(6);
+                    usuario.CargoUsuario = (Cargo)elLectorDeDatos.GetInt32(7);
 
                     listausuarios.Add(usuario);
                 }
@@ -78,47 +76,31 @@ namespace BibliotecaDeBiblioteca
             //string password_protegido = EncodePassword(user.Contrasenha);
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION)) 
             {
+                Persona p = new Persona(user.Nro_documento, user.Nombre, user.Apellido, user.Telefono, user.Direccion);
+
+                Persona.CrearPersona(p);
+
                 con.Open();
 
-                string textoCmd = "INSERT INTO Persona (Nro_documento, Nombre, Apellido, email, telefono, direccion, nacionalidad) values(@Nro_documento, @nombre, @apellido, @email, @telefono, @direccion, @nacionalidad)";
-                string textoCmd2 = "insert into Usuario (Nro_documento, usuario, password, cargo) VALUES (@Nro_documento, @Usuario, @password, @cargo)";
+                string textoCmd = "insert into Usuario (Nro_documento, usuario, password, cargo) VALUES (@Nro_documento, @Usuario, @password, @cargo)";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
-                SqlCommand cmd2 = new SqlCommand(textoCmd2, con);
+
                 SqlParameter p0 = new SqlParameter("@Nro_documento", user.Nro_documento);
                 SqlParameter p1 = new SqlParameter("@Usuario", user.Usuario.Trim());
                 SqlParameter p2 = new SqlParameter("@password", user.Contrasenha);
-                SqlParameter p3 = new SqlParameter("@nombre", user.Nombre);
-                SqlParameter p4 = new SqlParameter("@apellido", user.Apellido);
-                SqlParameter p5 = new SqlParameter("@email", user.Email);
-                SqlParameter p6 = new SqlParameter("@telefono", user.Telefono);
-                SqlParameter p7 = new SqlParameter("@direccion", user.Direccion);
-                SqlParameter p8 = new SqlParameter("@nacionalidad", user.Nacionalidad);
-                SqlParameter p9 = new SqlParameter("@cargo", user.CargoUsuario);
+                SqlParameter p3 = new SqlParameter("@cargo", user.CargoUsuario);
                 p0.SqlDbType = SqlDbType.Int;
                 p1.SqlDbType = SqlDbType.VarChar;
                 p2.SqlDbType = SqlDbType.VarChar;
-                p3.SqlDbType = SqlDbType.VarChar;
-                p4.SqlDbType = SqlDbType.VarChar;
-                p5.SqlDbType = SqlDbType.VarChar;
-                p6.SqlDbType = SqlDbType.Int;
-                p7.SqlDbType = SqlDbType.VarChar;
-                p8.SqlDbType = SqlDbType.VarChar;
-                p9.SqlDbType = SqlDbType.Int;
-                cmd.Parameters.Add(p0);
-                cmd2.Parameters.Add(p0);
-                cmd2.Parameters.Add(p1); 
-                cmd2.Parameters.Add(p2);
-                cmd.Parameters.Add(p3);
-                cmd.Parameters.Add(p4);
-                cmd.Parameters.Add(p5);
-                cmd.Parameters.Add(p6);
-                cmd.Parameters.Add(p7);
-                cmd.Parameters.Add(p8);
-                cmd2.Parameters.Add(p9);
+                p3.SqlDbType = SqlDbType.Int;
+                
 
+                cmd.Parameters.Add(p0);
+                cmd.Parameters.Add(p1);
+                cmd.Parameters.Add(p2);
+                cmd.Parameters.Add(p3);
                 cmd.ExecuteNonQuery();
-                cmd2.ExecuteNonQuery();
             }
         }
 
@@ -157,7 +139,43 @@ namespace BibliotecaDeBiblioteca
             }
         }
 
+        }
+        private SqlCommand ObtenerParametroId(SqlCommand cmd)
+        {
+            SqlParameter p90 = new SqlParameter("@Nro_Documento", this.Nro_documento);
+            p90.SqlDbType = SqlDbType.Int;
+            cmd.Parameters.Add(p90);
 
+            return cmd;
+        }
+
+        public static void EditarUsuario(int index, Usuarios u)
+        {
+
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                Persona person = new Persona(u.Nro_documento,u.Nombre,u.Apellido, u.Telefono, u.Direccion);
+                Persona.EditarPersona(index, person);
+                con.Open();
+                string textoCmd = @"UPDATE Usuario SET Nro_Documento = @Nro_Documento, Usuario = @Usuario, Password = @Password , Cargo = @Cargo where Nro_Documento= @Nro_Documento";
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                SqlParameter p1 = new SqlParameter("@Usuario", u.Usuario.Trim());
+                SqlParameter p2 = new SqlParameter("@password", u.Contrasenha);
+                SqlParameter p3 = new SqlParameter("@cargo", u.CargoUsuario);
+
+                cmd = u.ObtenerParametroId(cmd);
+                p1.SqlDbType = SqlDbType.VarChar;
+                p2.SqlDbType = SqlDbType.VarChar;
+                p3.SqlDbType = SqlDbType.Int;
+
+                cmd.Parameters.Add(p1);
+                cmd.Parameters.Add(p2);
+                cmd.Parameters.Add(p3);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
         /*public static string EncodePassword(string originalPassword)
         {
 
