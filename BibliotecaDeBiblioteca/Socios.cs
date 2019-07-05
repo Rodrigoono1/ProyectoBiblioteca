@@ -34,7 +34,7 @@ namespace BibliotecaDeBiblioteca
 
         public override string ToString()
         {
-            return "Nombre: " + this.Nombre + "; " + "Apellido: " + this.Apellido + ";" + "Contacto: " + this.Telefono;
+            return this.Nombre + " " + this.Apellido;
         }
 
         public List<Socios> listarsocios = new List<Socios>();
@@ -106,6 +106,22 @@ namespace BibliotecaDeBiblioteca
                 cmd.Parameters.Add(p1);
                 cmd.ExecuteNonQuery();
             }
+        }
+        public static Socios ObtenerSocio(int id)
+        {
+            Socios socio = null;
+
+            if (listaSocios.Count == 0) Socios.ObtenerSocios();
+
+            foreach (Socios s in listaSocios)
+            {
+                if (s.Nro_documento == id)
+                {
+                    socio = s;
+                    break;
+                }
+            }
+            return socio;
         }
 
 

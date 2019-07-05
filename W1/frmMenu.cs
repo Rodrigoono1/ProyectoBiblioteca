@@ -52,5 +52,11 @@ namespace W1
             MessageBox.Show("Desarrollado por Team Cannon \n" +
                 "-Diego Benitez \n" + "-Renato Jara \n" + "-Barbara Morales \n" + "-Rodrigo Ono \n" + "-Jose Yegros");
         }
+
+        private void TsmPrestamo_Click(object sender, EventArgs e)
+        {
+            frmPrestamos form = new frmPrestamos();
+            form.Show();
+        }
     }
 }

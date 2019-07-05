@@ -80,10 +80,27 @@ namespace BibliotecaDeBiblioteca
             }
             return listalibros;
         }
+        public static Libros ObtenerLibro(int id)
+        {
+            Libros libro = null;
+
+            if (listalibros.Count == 0) Libros.ObtenerLibros();
+
+            foreach (Libros l in listalibros)
+            {
+                if (l.Id == id)
+                {
+                    libro = l;
+                    break;
+                }
+
+            }
+            return libro;
+        }
 
         public override string ToString()
         {
-            return String.Format("Titulo: {0} Año: {1} ISBN: {2}", this.titulo, this.año, this.ISBN);
+            return this.titulo;
         }
     }
 }

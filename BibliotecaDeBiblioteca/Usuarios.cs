@@ -177,6 +177,23 @@ namespace BibliotecaDeBiblioteca
                 cmd.ExecuteNonQuery();
             }
         }
+        public static Usuarios ObtenerUsuario(int id)
+        {
+            Usuarios usuario = null;
+
+            if (listausuarios.Count == 0) Usuarios.ObtenerUsuarios();
+
+            foreach (Usuarios u in listausuarios)
+            {
+                if (u.Nro_documento == id)
+                {
+                    usuario = u;
+                    break;
+                }
+
+            }
+            return usuario;
+        }
         /*public static string EncodePassword(string originalPassword)
         {
 

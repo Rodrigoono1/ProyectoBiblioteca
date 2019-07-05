@@ -71,35 +71,35 @@
             // tsmAutor
             // 
             this.tsmAutor.Name = "tsmAutor";
-            this.tsmAutor.Size = new System.Drawing.Size(117, 22);
+            this.tsmAutor.Size = new System.Drawing.Size(180, 22);
             this.tsmAutor.Text = "Autor";
             this.tsmAutor.Click += new System.EventHandler(this.TsmAutor_Click);
             // 
             // tsmEditorial
             // 
             this.tsmEditorial.Name = "tsmEditorial";
-            this.tsmEditorial.Size = new System.Drawing.Size(117, 22);
+            this.tsmEditorial.Size = new System.Drawing.Size(180, 22);
             this.tsmEditorial.Text = "Editorial";
             this.tsmEditorial.Click += new System.EventHandler(this.TsmEditorial_Click);
             // 
             // tsmLibro
             // 
             this.tsmLibro.Name = "tsmLibro";
-            this.tsmLibro.Size = new System.Drawing.Size(117, 22);
+            this.tsmLibro.Size = new System.Drawing.Size(180, 22);
             this.tsmLibro.Text = "Libro";
             this.tsmLibro.Click += new System.EventHandler(this.TsmLibro_Click);
             // 
             // tsmSocio
             // 
             this.tsmSocio.Name = "tsmSocio";
-            this.tsmSocio.Size = new System.Drawing.Size(117, 22);
+            this.tsmSocio.Size = new System.Drawing.Size(180, 22);
             this.tsmSocio.Text = "Socio";
             this.tsmSocio.Click += new System.EventHandler(this.TsmSocio_Click);
             // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.UsuarioToolStripMenuItem_Click);
             // 
@@ -115,13 +115,14 @@
             // tsmPrestamo
             // 
             this.tsmPrestamo.Name = "tsmPrestamo";
-            this.tsmPrestamo.Size = new System.Drawing.Size(134, 22);
+            this.tsmPrestamo.Size = new System.Drawing.Size(180, 22);
             this.tsmPrestamo.Text = "Préstamo";
+            this.tsmPrestamo.Click += new System.EventHandler(this.TsmPrestamo_Click);
             // 
             // tsmDevolucion
             // 
             this.tsmDevolucion.Name = "tsmDevolucion";
-            this.tsmDevolucion.Size = new System.Drawing.Size(134, 22);
+            this.tsmDevolucion.Size = new System.Drawing.Size(180, 22);
             this.tsmDevolucion.Text = "Devolución";
             // 
             // acercaDeToolStripMenuItem
