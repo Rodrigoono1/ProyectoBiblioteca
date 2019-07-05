@@ -26,8 +26,9 @@ namespace W1
             editor.Direccion = txtDireccion.Text;
             editor.Telefono = txtTelefono.Text;
             editor.Email = txtEmail.Text;
-            edi.listareditoriales.Add(editor);
 
+            //editor.listareditoriales.Add(editor);
+            Editorial.AgregarEditorial(editor);
             ActualizarGrid();
             Limpiar();
         }
@@ -36,12 +37,12 @@ namespace W1
         {
             edi = new Editorial();
             dgvEditorial.AutoGenerateColumns = true;
-
+            dgvEditorial.DataSource = Editorial.ObtenerEditoriales();
         }
         private void ActualizarGrid()
         {
             dgvEditorial.DataSource = null;
-            dgvEditorial.DataSource = edi.listareditoriales;
+            dgvEditorial.DataSource = Editorial.ObtenerEditoriales();
         }
         private void Limpiar()
         {
@@ -57,9 +58,11 @@ namespace W1
             Editorial editor = (Editorial)dgvEditorial.CurrentRow.DataBoundItem;
             if (editor != null)
             {
-                edi.listareditoriales.Remove(editor);
+                //edi.listareditoriales.Remove(editor);
+                Editorial.BorrarEditorial(editor);
             }
             ActualizarGrid();
+            Limpiar();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

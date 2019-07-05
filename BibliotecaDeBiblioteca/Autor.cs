@@ -88,7 +88,7 @@ namespace BibliotecaDeBiblioteca
 
         public static List<Autor> ObtenerAutor()
         {
-            //return listaProveedores;
+            //return lista autores;
             Autor autor;
             ListaAutor.Clear();
 

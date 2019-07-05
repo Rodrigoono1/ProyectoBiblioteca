@@ -26,7 +26,7 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textCmd = @"insert into Editorial(Nombre,Direccion,Telefono, Email) VALUES (@Nombre, @Dirección, @Telefono,@Email)";
+                string textCmd = @"insert into Editorial(Nombre,Direccion,Telefono, Email) VALUES (@Nombre, @Direccion, @Telefono,@Email)";
                 SqlCommand cmd = new SqlCommand(textCmd, con);
                 SqlParameter p1 = new SqlParameter("@Nombre", e.Nombre);
                 SqlParameter p2 = new SqlParameter("@Direccion", e.Direccion);
@@ -95,9 +95,9 @@ namespace BibliotecaDeBiblioteca
 
         public static List<Editorial> ObtenerEditoriales()
         {
-            //return listaProveedores;
+            //return lista editoriales;
             Editorial editorial;
-            listaEditorial.Clear();
+            Editorial.listaEditorial.Clear();
 
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
@@ -130,11 +130,11 @@ namespace BibliotecaDeBiblioteca
 
             if (listaEditorial.Count == 0) Editorial.ObtenerEditoriales();
 
-            foreach (Editorial a in listaEditorial)
+            foreach (Editorial e in listaEditorial)
             {
-                if (a.Id == id)
+                if (e.Id == id)
                 {
-                    editorial = a;
+                    editorial = e;
                     break;
                 }
 
