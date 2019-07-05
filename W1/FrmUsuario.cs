@@ -24,16 +24,18 @@ namespace W1
             cboCargo.DataSource = Enum.GetValues(typeof(Cargo));
             cboCargo.SelectedItem = null;
             txtNombre.Focus();
+            LimpiarForm();
         }
 
         private void ActualizarListaUsuario()
         {
             lstUsuarios.DataSource = null;
-            lstUsuarios.DataSource = Usuarios.listausuarios;
+            lstUsuarios.DataSource = Usuarios.ObtenerUsuarios();
         }
 
         private void LimpiarForm()
         {
+            nudCI.Value = 0;
             cboCargo.Enabled = true;
             txtcontrasena.Enabled = true;
             txtNombre.Clear();
@@ -43,6 +45,7 @@ namespace W1
             txtUsuario.Clear();
             txtcontrasena.Clear();
             cboCargo.SelectedItem = null;
+            lstUsuarios.SelectedItem = null;
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
@@ -62,10 +65,11 @@ namespace W1
 
         private Usuarios DefUsuarios() {
             Usuarios usuario = new Usuarios();
+            usuario.Nro_documento = Convert.ToInt32(nudCI.Value);
             usuario.Nombre = txtNombre.Text;
             usuario.Apellido = txtApellido.Text;
             usuario.Direccion = txtDireccion.Text;
-            usuario.Telefono = txtTelefono.Text;
+            usuario.Telefono = Convert.ToInt32(txtTelefono.Text);
             usuario.Usuario = txtUsuario.Text;
             usuario.Contrasenha = txtcontrasena.Text;
             usuario.CargoUsuario = (Cargo)cboCargo.SelectedItem;
@@ -88,9 +92,10 @@ namespace W1
             Usuarios user = (Usuarios)lstUsuarios.SelectedItem;
             if (user != null)
             {
+                nudCI.Value = user.Nro_documento;
                 txtNombre.Text = user.Nombre;
                 txtApellido.Text = user.Apellido;
-                txtTelefono.Text = user.Telefono;
+                txtTelefono.Text = Convert.ToString(user.Telefono);
                 txtDireccion.Text = user.Direccion;
                 txtUsuario.Text = user.Usuario;
                 txtcontrasena.Text = user.Contrasenha;

@@ -14,17 +14,16 @@ namespace BibliotecaDeBiblioteca
     {
         public string Contrasenha { get; set; }
         public string Usuario { get; set; }
-
         public Cargo CargoUsuario {get; set;}
 
             public Usuarios() { }
-            public Usuarios(string nro_documento, string nombre, string apellido, string telefono, string direccion,string usuario, string contrasenha, Cargo cargo)
+            public Usuarios(int nro_documento, string nombre, string apellido, int telefono, string direccion,string usuario, string contrasenha, Cargo cargo)
             {
                 this.Nro_documento = nro_documento;
                 this.Nombre = nombre;
                 this.Apellido = apellido;
                 this.Telefono = telefono;
-            this.Direccion = direccion;
+                this.Direccion = direccion;
                 this.Usuario = usuario;
                 this.Contrasenha = contrasenha;
                 this.CargoUsuario = cargo;
@@ -38,7 +37,7 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "Select * from Usuario";
+                string textoCmd = "Select p.*, u.usuario, u.password, u.cargo from Usuario u Inner Join Persona p on p.Nro_documento = u.Nro_documento";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
@@ -47,15 +46,16 @@ namespace BibliotecaDeBiblioteca
                 while (elLectorDeDatos.Read())
                 {
                     usuario = new Usuarios();
-                    usuario.Nro_documento = elLectorDeDatos.GetString(0);
-                    usuario.Usuario = elLectorDeDatos.GetString(1);
-                    usuario.Contrasenha = elLectorDeDatos.GetString(2);
-                    usuario.Nombre = elLectorDeDatos.GetString(3);
-                    usuario.Apellido = elLectorDeDatos.GetString(4);
-                    usuario.Email = elLectorDeDatos.GetString(5);
-                    usuario.Direccion = elLectorDeDatos.GetString(6);
-                    usuario.Telefono = elLectorDeDatos.GetString(7);
-                    usuario.CargoUsuario = (Cargo)elLectorDeDatos.GetInt32(8);
+                    usuario.Nro_documento = elLectorDeDatos.GetInt32(0);
+                    usuario.Nombre = elLectorDeDatos.GetString(1);
+                    usuario.Apellido = elLectorDeDatos.GetString(2);
+                    usuario.Email = elLectorDeDatos.GetString(3);
+                    usuario.Telefono = elLectorDeDatos.GetInt32(4);
+                    usuario.Direccion = elLectorDeDatos.GetString(5);
+                    usuario.Nacionalidad = elLectorDeDatos.GetString(6);
+                    usuario.Usuario = elLectorDeDatos.GetString(7);
+                    usuario.Contrasenha = elLectorDeDatos.GetString(8);
+                    usuario.CargoUsuario = (Cargo)elLectorDeDatos.GetInt32(9);
 
                     listausuarios.Add(usuario);
                 }
@@ -80,10 +80,12 @@ namespace BibliotecaDeBiblioteca
             {
                 con.Open();
 
-                string textoCmd = "INSERT INTO USUARIO (usuario, password, nombre, apellido, email, telefono, direccion, nacionalidad, cargo) values(@Usuario, @password, @nombre, @apellido, @email, @telefono, @direccion, @nacionalidad, @cargo)";
+                string textoCmd = "INSERT INTO Persona (Nro_documento, Nombre, Apellido, email, telefono, direccion, nacionalidad) values(@Nro_documento, @nombre, @apellido, @email, @telefono, @direccion, @nacionalidad)";
+                string textoCmd2 = "insert into Usuario (Nro_documento, usuario, password, cargo) VALUES (@Nro_documento, @Usuario, @password, @cargo)";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
-
+                SqlCommand cmd2 = new SqlCommand(textoCmd2, con);
+                SqlParameter p0 = new SqlParameter("@Nro_documento", user.Nro_documento);
                 SqlParameter p1 = new SqlParameter("@Usuario", user.Usuario.Trim());
                 SqlParameter p2 = new SqlParameter("@password", user.Contrasenha);
                 SqlParameter p3 = new SqlParameter("@nombre", user.Nombre);
@@ -93,27 +95,30 @@ namespace BibliotecaDeBiblioteca
                 SqlParameter p7 = new SqlParameter("@direccion", user.Direccion);
                 SqlParameter p8 = new SqlParameter("@nacionalidad", user.Nacionalidad);
                 SqlParameter p9 = new SqlParameter("@cargo", user.CargoUsuario);
+                p0.SqlDbType = SqlDbType.Int;
                 p1.SqlDbType = SqlDbType.VarChar;
                 p2.SqlDbType = SqlDbType.VarChar;
                 p3.SqlDbType = SqlDbType.VarChar;
                 p4.SqlDbType = SqlDbType.VarChar;
                 p5.SqlDbType = SqlDbType.VarChar;
-                p6.SqlDbType = SqlDbType.VarChar;
+                p6.SqlDbType = SqlDbType.Int;
                 p7.SqlDbType = SqlDbType.VarChar;
                 p8.SqlDbType = SqlDbType.VarChar;
                 p9.SqlDbType = SqlDbType.Int;
-                cmd.Parameters.Add(p1); 
-                cmd.Parameters.Add(p2);
+                cmd.Parameters.Add(p0);
+                cmd2.Parameters.Add(p0);
+                cmd2.Parameters.Add(p1); 
+                cmd2.Parameters.Add(p2);
                 cmd.Parameters.Add(p3);
                 cmd.Parameters.Add(p4);
                 cmd.Parameters.Add(p5);
                 cmd.Parameters.Add(p6);
                 cmd.Parameters.Add(p7);
                 cmd.Parameters.Add(p8);
-                cmd.Parameters.Add(p9);
+                cmd2.Parameters.Add(p9);
 
-                cmd.ExecuteNonQuery(); 
-
+                cmd.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
             }
         }
 
