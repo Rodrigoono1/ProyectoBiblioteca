@@ -19,11 +19,9 @@ namespace BibliotecaDeBiblioteca
     {
 
              
-        //public Categoria Categoria { get; set; }
-        public string Categoria { get; set; }
-        public int Id { get; set; }
+        public Categoria Categoria { get; set; }
         public Socios() { }
-        public Socios(string nro_documento, string nombre, string apellido, string email, string telefono, string direccion,string categoria)
+        public Socios(int nro_documento, string nombre, string apellido, string email, int telefono, string direccion,Categoria categoria)
         {
             this.Nro_documento = nro_documento;
             this.Nombre = nombre;
@@ -49,7 +47,7 @@ namespace BibliotecaDeBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "Select * from Socios";
+                string textoCmd = "Select p.*, s.Categoria from Socio s INNER JOIN Persona p on s.Nro_documento = p.Nro_documento";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
@@ -58,13 +56,13 @@ namespace BibliotecaDeBiblioteca
                 while (elLectorDeDatos.Read())
                 {
                     socio = new Socios();
-                    socio.Id = elLectorDeDatos.GetInt32(0);
-                    socio.Nro_documento = elLectorDeDatos.GetString(1);
+                    socio.Nro_documento = elLectorDeDatos.GetInt32(1);
                     socio.Nombre = elLectorDeDatos.GetString(2);
                     socio.Apellido = elLectorDeDatos.GetString(3);
                     socio.Email = elLectorDeDatos.GetString(4);
-                    socio.Telefono = elLectorDeDatos.GetString(5);
+                    socio.Telefono = elLectorDeDatos.GetInt32(5);
                     socio.Direccion = elLectorDeDatos.GetString(6);
+                    socio.Categoria = (Categoria)elLectorDeDatos.GetInt32(7);
 
                     listaSocios.Add(socio);
                 }

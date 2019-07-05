@@ -50,16 +50,15 @@ namespace W1
 
         private void BtnAgregar_Click_1(object sender, EventArgs e)
         {
-            string cmb = cmbCategoria.Text.ToString();
 
             Socios soc = new Socios();
-            soc.Nro_documento = txtNroDoc.Text;
+            soc.Nro_documento = Convert.ToInt32(txtNroDoc.Text);
             soc.Nombre = txtNombre.Text;
             soc.Apellido = txtApellido.Text;
             soc.Email = txtEmail.Text;
-            soc.Telefono = txtTelefono.Text;
+            soc.Telefono = Convert.ToInt32(txtTelefono.Text);
             soc.Direccion = txtDireccion.Text;
-            soc.Categoria = cmb;
+            soc.Categoria = (Categoria)cmbCategoria.SelectedItem;
             socio.listarsocios.Add(soc);
             
             ActualizarGrid();
