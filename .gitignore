@@ -340,4 +340,4 @@ ASALocalRun/
 healthchecksdb
 
 #appconfig para evitar problemas de conexion
-app.config
+App.config
